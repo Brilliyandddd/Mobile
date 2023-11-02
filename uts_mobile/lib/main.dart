@@ -44,7 +44,7 @@ class MainApp extends StatelessWidget {
                     child: Transform.scale(
                       scale: 1.2,
                       child: Image.asset(
-                      'assets/images/discount.png',
+                      'assets/icons/discount.png',
                       width: 50,
                       height: 50,
                     ),
@@ -70,7 +70,7 @@ class MainApp extends StatelessWidget {
                     child: Transform.scale(
                       scale: 1.2,
                       child: Image.asset(
-                      'assets/images/heart.png',
+                      'assets/icons/heart.png',
                       width: 50,
                       height: 50,
                     ),
