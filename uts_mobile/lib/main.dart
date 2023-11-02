@@ -42,9 +42,9 @@ class MainApp extends StatelessWidget {
                       ),
                     ),
                     child: Transform.scale(
-                      scale: 1.2,
+                      scale: 1.0,
                       child: Image.asset(
-                      'assets/icons/discount.png',
+                      'assets/icons/coupon.png',
                       width: 50,
                       height: 50,
                     ),
