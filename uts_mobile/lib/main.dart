@@ -27,62 +27,62 @@ class MainApp extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: <Widget>[
                       Container(
-                          margin: EdgeInsets.only(top: 60),
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 1,
-                                blurRadius: 1,
-                                offset:
-                                    Offset(1, 1), // changes position of shadow
-                              ),
-                            ],
-                            color: Colors.white,
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10),
+                        margin: EdgeInsets.only(top: 60),
+                        decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 1,
+                              blurRadius: 1,
+                              offset: Offset(1, 1),
                             ),
+                          ],
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10),
                           ),
-                          child: Transform.scale(
-                            scale: 0.6,
-                            child: Image.asset(
-                              'assets/icons/coupon.png',
-                              width: 50,
-                              height: 50,
-                            ),
-                          )),
+                        ),
+                        child: Transform.scale(
+                          scale: 0.6,
+                          child: Image.asset(
+                            'assets/icons/coupon.png',
+                            width: 50,
+                            height: 50,
+                          ),
+                        ),
+                      ),
                       SizedBox(width: 10),
                       Container(
-                          margin: EdgeInsets.only(top: 60, right: 30),
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 1,
-                                blurRadius: 1,
-                                offset:
-                                    Offset(1, 1), // changes position of shadow
-                              ),
-                            ],
-                            color: Colors.white,
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10),
+                        margin: EdgeInsets.only(top: 60, right: 30),
+                        decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 1,
+                              blurRadius: 1,
+                              offset: Offset(1, 1),
                             ),
+                          ],
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10),
                           ),
-                          child: Transform.scale(
-                            scale: 0.6,
-                            child: Image.asset(
-                              'assets/icons/heart.png',
-                              width: 50,
-                              height: 50,
-                            ),
-                          )),
+                        ),
+                        child: Transform.scale(
+                          scale: 0.6,
+                          child: Image.asset(
+                            'assets/icons/heart.png',
+                            width: 50,
+                            height: 50,
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
               ],
             ),
-            SizedBox(height: 5),
+            SizedBox(height: 0),
             Container(
               margin: EdgeInsets.only(top: 5),
               width: 350,
@@ -122,20 +122,21 @@ class MainApp extends StatelessWidget {
                         borderRadius: BorderRadius.all(
                           Radius.circular(10),
                         ),
-                        ),
-                        child: Column(
+                      ),
+                      child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(left: 10),
-                          child: Text(
-                            'Saldo Kamu',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 14,
+                            child: Text(
+                              'Saldo Kamu',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w300,
+                              ),
                             ),
-                          ),
                           ),
                           SizedBox(height: 3),
                           Row(
@@ -143,14 +144,14 @@ class MainApp extends StatelessWidget {
                             children: [
                               Padding(
                                 padding: const EdgeInsets.only(left: 10),
-                              child: Text(
-                                'Rp 100.000',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold
+                                child: Text(
+                                  'Rp 100.000',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
-                              ),
                               ),
                               SizedBox(width: 5),
                               Image.asset(
@@ -162,7 +163,7 @@ class MainApp extends StatelessWidget {
                           ),
                         ],
                       ),
-                      ),
+                    ),
                   ),
                   Positioned(
                     right: 55,
@@ -175,12 +176,130 @@ class MainApp extends StatelessWidget {
                         borderRadius: BorderRadius.all(
                           Radius.circular(10),
                         ),
-                        ),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: Text(
+                              'Saldo Bonus',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w300,
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 3),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 10),
+                                child: Text(
+                                  '0',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(width: 5),
+                              Image.asset(
+                                'assets/icons/arrow-right.png',
+                                width: 20,
+                                height: 20,
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
+                  ),
                 ],
               ),
             ),
+            SizedBox(height: 25),
+            Positioned(
+                child: Container(
+              width: 350,
+              height: 100,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius:
+                    BorderRadius.circular(10), // Menambahkan BorderRadius
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 1,
+                    blurRadius: 1,
+                    offset: Offset(1, 1),
+                  ),
+                ],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment
+                    .spaceAround,
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.asset(
+                        'assets/icons/kirim.png',
+                        width: 40,
+                        height: 40,
+                      ),
+                      SizedBox(height: 5),
+                      Text('Isi Saldo'),
+                    ],
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.asset(
+                        'assets/icons/isisaldo.png', // Ganti dengan path gambar yang sesuai
+                        width: 40,
+                        height: 40,
+                      ),
+                      SizedBox(height: 5),
+                      Text('Kirim Uang'),
+                    ],
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.asset(
+                        'assets/icons/discount.png', // Ganti dengan path gambar yang sesuai
+                        width: 40,
+                        height: 40,
+                      ),
+                      SizedBox(height: 5),
+                      Text('Kode Tiket'),
+                    ],
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.asset(
+                        'assets/icons/apps.png', // Ganti dengan path gambar yang sesuai
+                        width: 40,
+                        height: 40,
+                      ),
+                      SizedBox(height: 5),
+                      Text('Semua'),
+                    ],
+                  ),
+                ],
+              ),
+            )
+            )
           ],
         ),
       ),
