@@ -102,10 +102,10 @@ class MainApp extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(20.0),
                       child: Text(
-                        'Hai, BRILLIYAND NOVAL HERDANA PUTRA',
+                        'Hai, BRILLIYAND NOVAL H.P.',
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 14,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -123,6 +123,45 @@ class MainApp extends StatelessWidget {
                           Radius.circular(10),
                         ),
                         ),
+                        child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                          child: Text(
+                            'Saldo Kamu',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 14,
+                            ),
+                          ),
+                          ),
+                          SizedBox(height: 3),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 10),
+                              child: Text(
+                                'Rp 100.000',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold
+                                ),
+                              ),
+                              ),
+                              SizedBox(width: 5),
+                              Image.asset(
+                                'assets/icons/arrow-right.png',
+                                width: 20,
+                                height: 20,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                       ),
                   ),
                   Positioned(
