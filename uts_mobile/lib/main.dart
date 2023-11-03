@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+
 
 void main() {
   runApp(MainApp());
@@ -224,27 +226,360 @@ class MainApp extends StatelessWidget {
             ),
             SizedBox(height: 25),
             Positioned(
-                child: Container(
-              width: 350,
-              height: 100,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius:
-                    BorderRadius.circular(10), // Menambahkan BorderRadius
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 1,
-                    blurRadius: 1,
-                    offset: Offset(1, 1),
-                  ),
-                ],
+              child: Container(
+                width: 350,
+                height: 100,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius:
+                      BorderRadius.circular(10), // Menambahkan BorderRadius
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 1,
+                      blurRadius: 1,
+                      offset: Offset(1, 1),
+                    ),
+                  ],
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Image.asset(
+                          'assets/icons/kirim.png',
+                          width: 40,
+                          height: 40,
+                        ),
+                        SizedBox(height: 5),
+                        Text('Isi Saldo'),
+                      ],
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Image.asset(
+                          'assets/icons/isisaldo.png', // Ganti dengan path gambar yang sesuai
+                          width: 40,
+                          height: 40,
+                        ),
+                        SizedBox(height: 5),
+                        Text('Kirim Uang'),
+                      ],
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Image.asset(
+                          'assets/icons/discount.png', // Ganti dengan path gambar yang sesuai
+                          width: 40,
+                          height: 40,
+                        ),
+                        SizedBox(height: 5),
+                        Text('Kode Tiket'),
+                      ],
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Image.asset(
+                          'assets/icons/apps.png', // Ganti dengan path gambar yang sesuai
+                          width: 40,
+                          height: 40,
+                        ),
+                        SizedBox(height: 5),
+                        Text('Semua'),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment
-                    .spaceAround,
-                children: [
-                  Column(
+            ),
+            SizedBox(height: 25),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  padding: EdgeInsets.all(5),
+                  width: 75,
+                  height: 75,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(1, 1),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.asset(
+                        'assets/icons/pulsa.png',
+                        width: 40,
+                        height: 40,
+                      ),
+                      SizedBox(height: 5),
+                      Text('Pulsa'),
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.all(5),
+                  width: 75,
+                  height: 75,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(1, 1),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.asset(
+                        'assets/icons/pdam.png',
+                        width: 40,
+                        height: 40,
+                      ),
+                      SizedBox(height: 5),
+                      Text('PDAM'),
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.all(5),
+                  width: 75,
+                  height: 75,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(1, 1),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.asset(
+                        'assets/icons/listrik.png',
+                        width: 40,
+                        height: 40,
+                      ),
+                      SizedBox(height: 5),
+                      Text('Listrik'),
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.all(5),
+                  width: 75,
+                  height: 75,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(1, 1),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.asset(
+                        'assets/icons/games.png',
+                        width: 40,
+                        height: 40,
+                      ),
+                      SizedBox(height: 5),
+                      Text('Games'),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  padding: EdgeInsets.all(5),
+                  width: 75,
+                  height: 75,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(1, 1),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.asset(
+                        'assets/icons/tvkabel.png',
+                        width: 40,
+                        height: 40,
+                      ),
+                      SizedBox(height: 5),
+                      Text('TV Kabel'),
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.all(5),
+                  width: 75,
+                  height: 75,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(1, 1),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.asset(
+                        'assets/icons/bpjs.png',
+                        width: 40,
+                        height: 40,
+                      ),
+                      SizedBox(height: 5),
+                      Text('BPJS'),
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.all(5),
+                  width: 75,
+                  height: 75,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(1, 1),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.asset(
+                        'assets/icons/bpjs.png',
+                        width: 40,
+                        height: 40,
+                      ),
+                      SizedBox(height: 5),
+                      Text('BPJS'),
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.all(5),
+                  width: 75,
+                  height: 75,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(1, 1),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.asset(
+                        'assets/icons/more.png',
+                        width: 40,
+                        height: 40,
+                      ),
+                      SizedBox(height: 5),
+                      Text('More'),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 20),
+            CarouselSlider(
+              options: CarouselOptions(
+                height: 100, // Tinggi carousel
+                enlargeCenterPage:
+                    true, // Membuat konten tengah menjadi lebih besar
+                enableInfiniteScroll: false, // Menonaktifkan geser tak berujung
+                initialPage: 0, // Halaman awal
+              ),
+              items: [
+                // Konten Carousel 1
+                Container(
+                  width: 75,
+                  height: 75,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(1, 1),
+                      ),
+                    ],
+                  ),
+                  child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -257,12 +592,29 @@ class MainApp extends StatelessWidget {
                       Text('Isi Saldo'),
                     ],
                   ),
-                  Column(
+                ),
+                // Konten Carousel 2
+                Container(
+                  width: 75,
+                  height: 75,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(1, 1),
+                      ),
+                    ],
+                  ),
+                  child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Image.asset(
-                        'assets/icons/isisaldo.png', // Ganti dengan path gambar yang sesuai
+                        'assets/icons/isisaldo.png',
                         width: 40,
                         height: 40,
                       ),
@@ -270,36 +622,26 @@ class MainApp extends StatelessWidget {
                       Text('Kirim Uang'),
                     ],
                   ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Image.asset(
-                        'assets/icons/discount.png', // Ganti dengan path gambar yang sesuai
-                        width: 40,
-                        height: 40,
+                ),
+                // Konten Carousel 3
+                Container(
+                  width: 75,
+                  height: 75,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(1, 1),
                       ),
-                      SizedBox(height: 5),
-                      Text('Kode Tiket'),
                     ],
                   ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Image.asset(
-                        'assets/icons/apps.png', // Ganti dengan path gambar yang sesuai
-                        width: 40,
-                        height: 40,
-                      ),
-                      SizedBox(height: 5),
-                      Text('Semua'),
-                    ],
-                  ),
-                ],
-              ),
-            )
-            )
+                ),
+              ],
+            ),
           ],
         ),
       ),
