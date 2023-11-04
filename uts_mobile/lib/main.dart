@@ -1,11 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'history.dart';
 
 void main() {
-  runApp(MainApp());
+  runApp(MaterialApp(
+    home: MainApp(),
+  ));
 }
 
-class MainApp extends StatelessWidget {
+class MainApp extends StatefulWidget {
+  @override
+  _MainAppState createState() => _MainAppState();
+}
+
+class _MainAppState extends State<MainApp> {
+  int selectedIndex = 0;
+
+  final List<Widget> pages = [
+    Container(),
+    HistoryPage(), // Tambahkan HistoryPage ke daftar halaman
+    // Tambahkan halaman lain jika diperlukan
+  ];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -556,80 +571,178 @@ class MainApp extends StatelessWidget {
               ),
               Container(
                 transform: Matrix4.translationValues(0.0, -60.0, 0.0),
-                  child: AspectRatio(
-                    aspectRatio: 1.0,
-                    child: CarouselSlider(
-                      options: CarouselOptions(
-                        enlargeCenterPage: true,
-                        enableInfiniteScroll: false,
-                        initialPage: 0,
-                        autoPlay: true,
-                        autoPlayInterval: Duration(seconds: 3),
-                        autoPlayAnimationDuration: Duration(milliseconds: 800),
-                      ),
-                      items: [
-                        // Konten Carousel 1
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 1,
-                                blurRadius: 1,
-                                offset: Offset(1, 1),
-                              ),
-                            ],
-                          ),
-                          child: Image.asset(
-                            'assets/images/carousel.jpg',
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        // Konten Carousel 2
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 1,
-                                blurRadius: 1,
-                                offset: Offset(1, 1),
-                              ),
-                            ],
-                          ),
-                          child: Image.asset(
-                            'assets/images/carousel.jpg',
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        // Konten Carousel 3
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 1,
-                                blurRadius: 1,
-                                offset: Offset(1, 1),
-                              ),
-                            ],
-                          ),
-                          child: Image.asset(
-                            'assets/images/carousel.jpg',
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ],
+                child: AspectRatio(
+                  aspectRatio: 1.0,
+                  child: CarouselSlider(
+                    options: CarouselOptions(
+                      enlargeCenterPage: true,
+                      enableInfiniteScroll: false,
+                      initialPage: 0,
+                      autoPlay: true,
+                      autoPlayInterval: Duration(seconds: 3),
+                      autoPlayAnimationDuration: Duration(milliseconds: 800),
                     ),
+                    items: [
+                      // Konten Carousel 1
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 1,
+                              blurRadius: 1,
+                              offset: Offset(1, 1),
+                            ),
+                          ],
+                        ),
+                        child: Image.asset(
+                          'assets/images/carousel.jpg',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      // Konten Carousel 2
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 1,
+                              blurRadius: 1,
+                              offset: Offset(1, 1),
+                            ),
+                          ],
+                        ),
+                        child: Image.asset(
+                          'assets/images/carousel.jpg',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      // Konten Carousel 3
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 1,
+                              blurRadius: 1,
+                              offset: Offset(1, 1),
+                            ),
+                          ],
+                        ),
+                        child: Image.asset(
+                          'assets/images/carousel.jpg',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
+              ),
             ],
+          ),
+        ),
+        bottomNavigationBar: Container(
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                spreadRadius: 10,
+                blurRadius: 20,
+                offset: Offset(0, 8),
+              ),
+            ],
+          ),
+          child: BottomNavigationBar(
+            currentIndex: selectedIndex,
+            onTap: (int index) {
+              setState(() {
+                selectedIndex = index;
+              });
+              if (index == 1) {
+                // Jika item "History" diklik (indeks 1)
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => HistoryPage(),
+                ));
+              }
+            },
+            showSelectedLabels: true,
+            showUnselectedLabels: true,
+            items: [
+              BottomNavigationBarItem(
+                icon: Image.asset(
+                  'assets/icons/home.png',
+                  width: 30,
+                  height: 30,
+                ),
+                activeIcon: Image.asset(
+                  'assets/icons/home.png',
+                  width: 40, // Ukuran gambar yang dipilih
+                  height: 40, // Ukuran gambar yang dipilih
+                ),
+                label: 'Home',
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset(
+                  'assets/icons/history.png',
+                  width: 30,
+                  height: 30,
+                ),
+                activeIcon: Image.asset(
+                  'assets/icons/history.png',
+                  width: 40, // Ukuran gambar yang dipilih
+                  height: 40, // Ukuran gambar yang dipilih
+                ),
+                label: 'History',
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset(
+                  'assets/icons/scan.png',
+                  width: 35,
+                  height: 35,
+                ),
+                activeIcon: Image.asset(
+                  'assets/icons/scan.png',
+                  width: 45, // Ukuran gambar yang dipilih
+                  height: 45, // Ukuran gambar yang dipilih
+                ),
+                label: 'QRIS',
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset(
+                  'assets/icons/email.png',
+                  width: 30,
+                  height: 30,
+                ),
+                activeIcon: Image.asset(
+                  'assets/icons/email.png',
+                  width: 40, // Ukuran gambar yang dipilih
+                  height: 40, // Ukuran gambar yang dipilih
+                ),
+                label: 'Inbox',
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset(
+                  'assets/icons/user.png',
+                  width: 30,
+                  height: 30,
+                ),
+                activeIcon: Image.asset(
+                  'assets/icons/user.png',
+                  width: 40, // Ukuran gambar yang dipilih
+                  height: 40, // Ukuran gambar yang dipilih
+                ),
+                label: 'Profil',
+              ),
+            ],
+            unselectedItemColor:
+                Colors.grey, // Warna teks label untuk item yang tidak dipilih
+            selectedItemColor: Colors.red,
           ),
         ),
       ),
